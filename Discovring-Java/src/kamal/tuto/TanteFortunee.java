@@ -1,4 +1,6 @@
-package kamal.tuto.ex;
+package kamal.tuto;
+
+import java.util.Scanner;
 
 public class TanteFortunee {
 
@@ -34,10 +36,20 @@ public class TanteFortunee {
     public void affichage() {
         System.out.println("Livre et Fournitures : " + this.Pourcentage() + " MAD");
         System.out.println("Vous pouvez ensuite acheter :");
-        System.out.println(this.result(this.cafee) + " caf�e");
+        System.out.println(this.result(this.cafee) + " cafée");
         System.out.println(this.result(this.carte) + " Carte");
         System.out.println(this.result(this.billet) + " billets");
         System.out.println("et il vous restera " + this.modulo(this.billet, this.cafee) + " MAD pour les roses blanches.");
+    }
+    public static void main(String[] args) {
+
+        System.out.println("Combien avez-vous reçu d'argent (MAD) ?");
+        Scanner clavier = new Scanner(System.in);
+        int input = clavier.nextInt();
+        clavier.close();
+        TanteFortunee  test = new TanteFortunee (input);
+        test.affichage();
+
     }
 
 }
